@@ -1,5 +1,5 @@
 DB_HOST = "119.29.184.167"
 DB_PORT = 27017
 DB_NAME = "yangqh"
-DB_USER = "yqh123"
-DB_PWD = "2316678"
+DB_USER = ""
+DB_PWD = ""

@@ -29,5 +29,4 @@ class SongAbstract(scrapy.Spider):
 
     def parse_song_list(self, response):
         selector = Selector(response)
-        titles = selector.xpath('//body//ul[@class="f-hide"]/li/a/text()').extract()
-        print(titles)
+        song_name_list = selector.xpath('//body//ul[@class="f-hide"]/li/a/text()').extract()

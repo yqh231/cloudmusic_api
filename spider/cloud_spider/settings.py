@@ -8,9 +8,7 @@
 #     http://doc.scrapy.org/en/latest/topics/settings.html
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/cloud_spider-middleware.html
-import sys,os
-ROOT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
-sys.path.extend([ROOT_PATH])
+
 
 BOT_NAME = 'cloud_spider'
 
@@ -92,8 +90,6 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-## 初始化mongo
-
-from database.init_db import config_mongo
-from util.conf import conf
+from spider.database.init_db import config_mongo
+from spider.util.conf import conf
 config_mongo(conf)
