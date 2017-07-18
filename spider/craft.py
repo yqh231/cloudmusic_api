@@ -1,6 +1,3 @@
-from pymongo import MongoClient
+s ='/song?id=466122460'
 
-MongoConn = MongoClient(host="119.29.184.167", port=27017)['yangqh']
-collection = MongoConn['init']
-
-print (collection.find()[1])
+print (s[9:])
