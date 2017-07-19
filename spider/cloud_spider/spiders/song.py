@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 import scrapy
 from scrapy.selector import Selector
@@ -10,9 +11,10 @@ from spider.database import generate_comment_index
 
 
 class SongAbstract(scrapy.Spider):
-    name = 'test'
+    name = 'song_list'
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
+        super(SongAbstract, self).__init__(*args, **kwargs)
         self.headers = {
             'Referer': 'http://music.163.com/',
             'Host': 'music.163.com',
@@ -48,7 +50,7 @@ class SongAbstract(scrapy.Spider):
             l = ItemLoader(item=SongListItem())
             l.add_value('name', song_name_list[index])
             l.add_value('type', response.meta['type'])
-            yield scrapy.FormRequest(url=self.BASE_URL + id_, meta={'song_id': id_[9:], 'loader':l}, method='GET',
+            yield scrapy.FormRequest(url=self.BASE_URL + id_, meta={'song_id': id_[9:], 'loader': l}, method='GET',
                                      headers=self.headers, callback=self.parse_single_song)
 
     def parse_single_song(self, response):
@@ -61,10 +63,37 @@ class SongAbstract(scrapy.Spider):
         loader.add_value('comment_id', comment_id)
 
         yield scrapy.FormRequest(url=comment_url, method='POST', headers=self.headers,
-                                   formdata=comment_data, callback=self.parse_comments, meta={'comment_id':comment_id})
-
-
+                                 formdata=comment_data, callback=self.parse_comments,
+                                 meta={'comment_id': comment_id})
 
     def parse_comments(self, response):
+        l = ItemLoader(item=CommentItem())
         comment_id = response.meta['comment_id']
         json_response = json.loads(response.body_as_unicode())
+        hot_comments = [{'name': item['user']['nickname'],
+                         'content': item['content'],
+                         'stars': item['likedCount'],
+                         'replyed_name': item['beReplied'][0]['user']['nickname']
+                         if item['beReplied'][0]['user']['nickname'] else None,
+                         'replyed_content': item['beReplied'][0]['content']
+                         if item['beReplied'][0]['content'] else None}
+                        for item in json_response['hotComments']]
+        comments = [{'name': item['user']['nickname'],
+                         'content': item['content'],
+                         'stars': item['likedCount'],
+                         'replyed_name': item['beReplied'][0]['user']['nickname']
+                         if item['beReplied'][0]['user']['nickname'] else None,
+                         'replyed_content': item['beReplied'][0]['content']
+                         if item['beReplied'][0]['content'] else None}
+                        for item in json_response['comments']]
+
+        l.add_value('_id', comment_id)
+        l.add_value('hot_comments', hot_comments)
+        l.add_value('comments', comments)
+
+        time_now = datetime.now()
+
+        l.add_value('update_time', time_now)
+        l.add_value('create_time', time_now)
+
+        yield  l.load_item()
