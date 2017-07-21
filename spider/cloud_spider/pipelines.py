@@ -16,6 +16,7 @@ class CloudSpiderPipeline(object):
             'type': item['type'][0],
             'source_url': item['source_url'][0],
             'comment_id': item['comment_id'][0],
+            'singer': item['singer'][0],
             'update_time': item['update_time'][0],
             'create_time': item['create_time'][0]
         }
