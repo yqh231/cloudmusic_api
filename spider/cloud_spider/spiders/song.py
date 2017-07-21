@@ -48,7 +48,7 @@ class SongAbstract(scrapy.Spider):
 
         for index, id_ in enumerate(song_id_list):
             l = ItemLoader(item=SongListItem())
-            l.add_value('name', song_name_list[index])
+            l.add_value('song_name', song_name_list[index])
             l.add_value('type', response.meta['type'])
             yield scrapy.FormRequest(url=self.BASE_URL + id_, meta={'song_id': id_[9:], 'loader': l}, method='GET',
                                      headers=self.headers, callback=self.parse_single_song)
@@ -58,33 +58,42 @@ class SongAbstract(scrapy.Spider):
         selector = Selector(response)
         singer = selector.xpath('/title/text()')
         loader.add_value('singer', singer)
+        loader.add_value('_id', response.meta['song_id'])
+
         comment_data, comment_url = api_comment(response.meta['song_id'], 0, 100)
-        comment_id = generate_comment_index()
+        source_data, source_url = api_song_url(response.meta['song_id'])
+        comment_id = generate_comment_index()['comment_index']
         loader.add_value('comment_id', comment_id)
+
 
         yield scrapy.FormRequest(url=comment_url, method='POST', headers=self.headers,
                                  formdata=comment_data, callback=self.parse_comments,
                                  meta={'comment_id': comment_id})
 
+        yield scrapy.FormRequest(url=source_url, method='POST', headers=self.headers,
+                                 formdata=source_data, meta={'loader': loader}, callback=self.get_source_url)
+
+
     def parse_comments(self, response):
         l = ItemLoader(item=CommentItem())
         comment_id = response.meta['comment_id']
         json_response = json.loads(response.body_as_unicode())
+
         hot_comments = [{'name': item['user']['nickname'],
                          'content': item['content'],
                          'stars': item['likedCount'],
                          'replyed_name': item['beReplied'][0]['user']['nickname']
-                         if item['beReplied'][0]['user']['nickname'] else None,
+                         if item['beReplied'] else None,
                          'replyed_content': item['beReplied'][0]['content']
-                         if item['beReplied'][0]['content'] else None}
+                         if item['beReplied'] else None}
                         for item in json_response['hotComments']]
         comments = [{'name': item['user']['nickname'],
                          'content': item['content'],
                          'stars': item['likedCount'],
                          'replyed_name': item['beReplied'][0]['user']['nickname']
-                         if item['beReplied'][0]['user']['nickname'] else None,
+                         if item['beReplied'] else None,
                          'replyed_content': item['beReplied'][0]['content']
-                         if item['beReplied'][0]['content'] else None}
+                         if item['beReplied'] else None}
                         for item in json_response['comments']]
 
         l.add_value('_id', comment_id)
@@ -97,3 +106,17 @@ class SongAbstract(scrapy.Spider):
         l.add_value('create_time', time_now)
 
         yield  l.load_item()
+
+    def get_source_url(self, response):
+        loader = response.meta['loader']
+        json_response = json.loads(response.body_as_unicode())['data']
+
+        source_url = json_response[0]['url']
+        loader.add_value('source_url', source_url)
+
+        time_now = datetime.now()
+
+        loader.add_value('update_time', time_now)
+        loader.add_value('create_time', time_now)
+
+        yield loader.load_item()

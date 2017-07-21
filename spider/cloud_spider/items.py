@@ -12,11 +12,13 @@ import scrapy
 class SongListItem(scrapy.Item):
     _id = scrapy.Field()
     song_name = scrapy.Field()
+    singer = scrapy.Field()
     type = scrapy.Field()
     source_url = scrapy.Field()
     comment_id = scrapy.Field()
     update_time = scrapy.Field()
     create_time = scrapy.Field()
+
 
 
 class CommentItem(scrapy.Item):

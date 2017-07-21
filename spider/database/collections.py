@@ -1,8 +1,15 @@
-from spider.database.init_db import MongoConn
+from spider.database.init_db import MongoConn, get_conn
 
 
 def get_new_songs():
-    return MongoConn['new_songs']
+    conn = get_conn()
+    return conn['song_list']
+
 
 def get_index():
-    return MongoConn['index']
+    conn = get_conn()
+    return conn['index']
+
+def get_comments():
+    conn = get_conn()
+    return conn['comments']

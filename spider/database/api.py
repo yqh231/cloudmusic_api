@@ -42,3 +42,11 @@ def generate_comment_index():
         "$inc": {'comment_index': 1}
     }
     return conn.find_one_and_update(filter, update_filter)
+
+def insert_song_list_data(data):
+    conn = get_new_songs()
+    conn.insert_one(data)
+
+def insert_comments(data):
+    conn = get_comments()
+    conn.insert_one(data)

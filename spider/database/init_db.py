@@ -11,3 +11,6 @@ def config_mongo(conf):
     # )
 
     MongoConn = MongoClient(host=conf.DB_HOST, port=int(conf.DB_PORT))['yangqh']
+
+def get_conn():
+    return MongoConn
