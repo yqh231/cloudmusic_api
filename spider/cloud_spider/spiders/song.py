@@ -56,7 +56,7 @@ class SongAbstract(scrapy.Spider):
     def parse_single_song(self, response):
         loader = response.meta['loader']
         selector = Selector(response)
-        singer = selector.xpath('/title/text()')
+        singer = selector.xpath('//title/text()').extract()
         loader.add_value('singer', singer)
         loader.add_value('_id', response.meta['song_id'])
 

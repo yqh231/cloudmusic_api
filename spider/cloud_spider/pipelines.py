@@ -6,9 +6,11 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 from spider.database import insert_song_list_data, insert_comments
 from spider.cloud_spider.items import CommentItem, SongListItem
+from spider.util.error import error
 
 class CloudSpiderPipeline(object):
 
+    @error
     def __process_song_list(self, item):
         data = {
             '_id': item['_id'][0],
@@ -22,6 +24,7 @@ class CloudSpiderPipeline(object):
         }
         insert_song_list_data(data)
 
+    @error
     def __process_comments(self, item):
         data = {
             '_id': item['_id'][0],
