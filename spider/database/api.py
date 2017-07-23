@@ -43,10 +43,20 @@ def generate_comment_index():
     }
     return conn.find_one_and_update(filter, update_filter)
 
+
 def insert_song_list_data(data):
     conn = get_new_songs()
     conn.insert_one(data)
 
+
 def insert_comments(data):
     conn = get_comments()
     conn.insert_one(data)
+
+
+def search_song_list_by_filter(filters, offset, limit, cols = None):
+    conn = get_new_songs()
+    if cols:
+        return conn.find(filters, cols).skip(offset).limit(limit)
+    else:
+        return conn.find(filters).skip(offset).limit(limit)
