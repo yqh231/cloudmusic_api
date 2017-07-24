@@ -28,3 +28,11 @@ def get_popular_song_list():
     data = [{'song_id': item['_id'], 'name': item['song_name'],
              'comment_id': item['comment_id'], 'source_url': item['source_url']} for item in result]
     return JsonSuccess(data)
+
+@api.route('/popular_song_comments')
+def get_popular_song_comments():
+    comment_id = request.args.get('comment_id')
+
+    if not comment_id:
+        pass
+
