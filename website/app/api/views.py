@@ -12,8 +12,8 @@ from website.app.util import JsonSuccess, JsonError, ParamCheck, Param, error
              'limit': Param(int, optional=True)})
 def get_popular_song_list(params):
     type_ = params['type']
-    offset = request.args.get('offset')
-    limit = request.args.get('limit')
+    offset = params.get('offset')
+    limit = params.get('limit')
 
     if not offset:
         offset = 0

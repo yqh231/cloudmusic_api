@@ -35,10 +35,21 @@ class CloudSpiderPipeline(object):
         }
         insert_comments(data)
 
+    @error
+    def __process_japanese_playlist(self, item):
+        pass
+
     def process_item(self, item, spider):
         if spider.name == 'song_list':
             if isinstance(item, SongListItem):
                 self.__process_song_list(item)
             if isinstance(item, CommentItem):
                 self.__process_comments(item)
+
+        if spider.name == 'play_list_janpanese':
+            if isinstance(item, SongListItem):
+                self.__process_japanese_playlist(item)
+            if isinstance(item, CommentItem):
+                self.__process_comments(item)
+
 
