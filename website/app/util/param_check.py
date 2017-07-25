@@ -1,17 +1,16 @@
 from flask import request
 
 class Param(object):
-    def __init__(self, _type, optional = False):
+    def __init__(self,_type, optional = False):
         self.func = _type
         self.optional = optional
 
 
 class ParamCheck(object):
-    def __init__(self, params):
+    def __init__(self,params):
         self.params = params
 
     def __call__(self, func):
-
         def wraps(*args, **kwargs):
             params = {}
             for k, param in self.params.items():
@@ -24,6 +23,7 @@ class ParamCheck(object):
                     params[k] = param.func(value_)
                 except Exception:
                     raise Exception('{}参数类型不对'.format(k))
+
             return func(params)
 
         return wraps

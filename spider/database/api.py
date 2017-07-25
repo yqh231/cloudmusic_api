@@ -60,3 +60,8 @@ def search_song_list_by_filter(filters, offset, limit, cols = None):
         return conn.find(filters, cols).skip(offset).limit(limit)
     else:
         return conn.find(filters).skip(offset).limit(limit)
+
+
+def search_by_comment_id(filter):
+    conn = get_comments()
+    return conn.find(filter)
