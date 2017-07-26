@@ -6,7 +6,7 @@ import scrapy
 from scrapy.selector import Selector
 from scrapy.contrib.loader import ItemLoader
 
-from spider.cloud_spider.items import SongListItem, CommentItem
+from spider.cloud_spider.items import SongListItem, PlayListItem
 from spider.cloud_api import api_comment, api_song_url
 from spider.database import generate_comment_index
 
@@ -39,7 +39,7 @@ class PlayLists(SongAbstract):
         song_id_list = selector.xpath('//body//ul[@class="f-hide"]/li/a/@href').extract()
         title = selector.xpath('//title/text()').extract()
         for index, id_ in enumerate(song_id_list):
-            l = ItemLoader(item=SongListItem())
+            l = ItemLoader(item=PlayListItem())
             l.add_value('song_name', song_name_list[index])
             l.add_value('title', title)
             yield scrapy.FormRequest(url=self.BASE_URL + id_, meta={'song_id': id_[9:], 'loader': l}, method='GET',
