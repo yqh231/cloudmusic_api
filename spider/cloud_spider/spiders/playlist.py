@@ -4,9 +4,9 @@ from datetime import datetime
 
 import scrapy
 from scrapy.selector import Selector
-from scrapy.contrib.loader import ItemLoader
+from scrapy.loader import ItemLoader
 
-from spider.cloud_spider.items import SongListItem, PlayListItem
+from spider.cloud_spider.items import SongListItem, PlayListItem, CommentItem
 from spider.cloud_api import api_comment, api_song_url
 from spider.database import generate_comment_index
 
@@ -26,7 +26,7 @@ class PlayLists(SongAbstract):
         selector = Selector(response)
         # 最后一项是冗余数据需要去掉
 
-        url_list = selector.xpath('//body//p[@class="dec"]/a/@href')[:-1].extract()
+        url_list = selector.xpath('//body//p[@class="dec"]/a/@href').extract()
 
         for url in url_list:
 
@@ -35,6 +35,7 @@ class PlayLists(SongAbstract):
 
     def parse_song_list(self, response):
         selector = Selector(response)
+
         song_name_list = selector.xpath('//body//ul[@class="f-hide"]/li/a/text()').extract()
         song_id_list = selector.xpath('//body//ul[@class="f-hide"]/li/a/@href').extract()
         title = selector.xpath('//title/text()').extract()
@@ -63,4 +64,6 @@ class PlayLists(SongAbstract):
 
         yield scrapy.FormRequest(url=source_url, method='POST', headers=self.headers,
                                  formdata=source_data, meta={'loader': loader}, callback=self.get_source_url)
+
+
 

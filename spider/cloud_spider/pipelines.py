@@ -57,7 +57,7 @@ class CloudSpiderPipeline(object):
             if isinstance(item, CommentItem):
                 self.__process_comments(item)
 
-        if spider.name == 'play_list_janpanese':
+        if spider.name == 'play_list_japanese':
             if isinstance(item, PlayListItem):
                 self.__process_japanese_playlist(item)
             if isinstance(item, CommentItem):
