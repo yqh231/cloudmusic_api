@@ -15,13 +15,13 @@ def api_comment(song_id, offset, limit):
     TEXT = {"rid": song_id, "offset": offset, "total": "true", "limit": limit, "csrf_token": ""}
     return generate_secret_key(TEXT), url
 
-def api_search(key_word, offset, limit):
-    url = BASE_URL + 'weapi/search/suggest/web?csrf_token='
-    TEXT = {'s': '天下', 'type': 1, 'offset': 0, 'limit':5}
-    res1 = generate_secret_key(TEXT)
-    import requests
-    import pprint
-    res = requests.post(url, data=res1)
-    print (res.text)
-
-api_search('海阔天空',0,5)
+# def api_search(key_word, offset, limit):
+#     url = BASE_URL + 'weapi/search/suggest/web?csrf_token='
+#     TEXT = {'s': '天下', 'type': 1, 'offset': 0, 'limit':5}
+#     res1 = generate_secret_key(TEXT)
+#     import requests
+#     import pprint
+#     res = requests.post(url, data=res1)
+#     print (res.text)
+#
+# api_search('海阔天空',0,5)
