@@ -1,7 +1,7 @@
-from spider.cloud_spider.spiders import playlist
+from spider.cloud_spider.spiders.playlist import PlayLists
 import scrapy
 
-class PlayListChinese(playlist):
+class PlayListChinese(PlayLists):
     name = 'play_list_chinese'
 
     def __init__(self, *args, **kwargs):
