@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c0afcf2-2163-43c4-864f-86e677237399" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spider/cloud_spider/spiders/play_list_chinese.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spider/cloud_api/api.py" afterPath="$PROJECT_DIR$/spider/cloud_api/api.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spider/cloud_spider/pipelines.py" afterPath="$PROJECT_DIR$/spider/cloud_spider/pipelines.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spider/cloud_spider/spiders/playlist.py" afterPath="$PROJECT_DIR$/spider/cloud_spider/spiders/playlist.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spider/database/api.py" afterPath="$PROJECT_DIR$/spider/database/api.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spider/database/collections.py" afterPath="$PROJECT_DIR$/spider/database/collections.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/cloudmusic_api$api__1_.coverage" NAME="api (1) Coverage Results" MODIFIED="1501033688825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider/cloud_api" />
+    <SUITE FILE_PATH="coverage/cloudmusic_api$api__1_.coverage" NAME="api (1) Coverage Results" MODIFIED="1501156691780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider/cloud_api" />
     <SUITE FILE_PATH="coverage/cloudmusic_api$conf.coverage" NAME="conf Coverage Results" MODIFIED="1500078022757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cloud_spider/util" />
     <SUITE FILE_PATH="coverage/cloudmusic_api$craft1.coverage" NAME="craft1 Coverage Results" MODIFIED="1500521356681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider" />
     <SUITE FILE_PATH="coverage/cloudmusic_api$api.coverage" NAME="api Coverage Results" MODIFIED="1500250544418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cloud_spider/cloud_api" />
@@ -25,13 +27,13 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6065469">
+    <splitter split-orientation="horizontal" split-proportion="0.43548387">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
             <entry file="file:///usr/local/lib/python3.5/dist-packages/flask/app.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
+                <state relative-caret-position="16422">
                   <caret line="992" column="40" lean-forward="false" selection-start-line="992" selection-start-column="35" selection-end-line="992" selection-end-column="40" />
                   <folding />
                 </state>
@@ -41,7 +43,7 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/website/app/api/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
+                <state relative-caret-position="221">
                   <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
@@ -63,8 +65,8 @@
           <file leaf-file-name="api.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/spider/database/api.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="935">
-                  <caret line="56" column="17" lean-forward="false" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+                <state relative-caret-position="615">
+                  <caret line="62" column="20" lean-forward="false" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
                   </folding>
@@ -85,8 +87,8 @@
           <file leaf-file-name="collections.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/spider/database/collections.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+                <state relative-caret-position="357">
+                  <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
@@ -112,13 +114,25 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="playlist.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="playlist.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/spider/cloud_spider/spiders/playlist.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="419">
-                  <caret line="112" column="34" lean-forward="false" selection-start-line="67" selection-start-column="6" selection-end-line="112" selection-end-column="34" />
+                <state relative-caret-position="309">
+                  <caret line="22" column="86" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="22" selection-end-column="86" />
                   <folding>
                     <element signature="e#0#57#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="play_list_chinese.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/spider/cloud_spider/spiders/play_list_chinese.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="204">
+                  <caret line="12" column="41" lean-forward="false" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+                  <folding>
+                    <element signature="e#0#48#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -131,10 +145,10 @@
           <file leaf-file-name="api.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/spider/cloud_api/api.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+                <state relative-caret-position="476">
+                  <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
                   <folding>
-                    <marker date="1501033688815" expanded="true" signature="215:325" ph="..." />
+                    <marker date="1501156691772" expanded="true" signature="215:325" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -143,8 +157,8 @@
           <file leaf-file-name="verify.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/spider/cloud_api/verify.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="765">
-                  <caret line="49" column="30" lean-forward="false" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+                <state relative-caret-position="850">
+                  <caret line="54" column="30" lean-forward="false" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="30" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
                   </folding>
@@ -155,8 +169,8 @@
           <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/spider/cloud_spider/pipelines.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="365">
-                  <caret line="59" column="39" lean-forward="true" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+                <state relative-caret-position="394">
+                  <caret line="63" column="18" lean-forward="false" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
                   <folding>
                     <element signature="e#192#275#0" expanded="true" />
                   </folding>
@@ -227,8 +241,8 @@
           <file leaf-file-name="song.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/spider/cloud_spider/spiders/song.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="530">
-                  <caret line="121" column="32" lean-forward="true" selection-start-line="76" selection-start-column="4" selection-end-line="121" selection-end-column="32" />
+                <state relative-caret-position="870">
+                  <caret line="121" column="32" lean-forward="false" selection-start-line="76" selection-start-column="4" selection-end-line="121" selection-end-column="32" />
                   <folding>
                     <element signature="e#0#11#0" expanded="true" />
                   </folding>
@@ -311,13 +325,14 @@
         <option value="$PROJECT_DIR$/website/app/util/my_blue_print.py" />
         <option value="$PROJECT_DIR$/website/app/api/views.py" />
         <option value="$PROJECT_DIR$/spider/craft.py" />
-        <option value="$PROJECT_DIR$/spider/database/api.py" />
         <option value="$PROJECT_DIR$/spider/database/__init__.py" />
-        <option value="$PROJECT_DIR$/spider/database/collections.py" />
         <option value="$PROJECT_DIR$/spider/cloud_spider/items.py" />
-        <option value="$PROJECT_DIR$/spider/cloud_api/api.py" />
-        <option value="$PROJECT_DIR$/spider/cloud_spider/pipelines.py" />
         <option value="$PROJECT_DIR$/spider/cloud_spider/spiders/playlist.py" />
+        <option value="$PROJECT_DIR$/spider/cloud_api/api.py" />
+        <option value="$PROJECT_DIR$/spider/cloud_spider/spiders/play_list_chinese.py" />
+        <option value="$PROJECT_DIR$/spider/cloud_spider/pipelines.py" />
+        <option value="$PROJECT_DIR$/spider/database/collections.py" />
+        <option value="$PROJECT_DIR$/spider/database/api.py" />
       </list>
     </option>
   </component>
@@ -328,10 +343,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
-    <option name="y" value="-4" />
-    <option name="width" value="1920" />
-    <option name="height" value="1084" />
+    <option name="x" value="1919" />
+    <option name="y" value="-11" />
+    <option name="width" value="1922" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -349,7 +364,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -418,12 +432,13 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/guanmai/gm_service" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -721,19 +736,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="-4" width="1920" height="1084" extended-state="6" />
+    <frame x="1919" y="-11" width="1922" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16773504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17200854" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41588297" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50992686" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35005224" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35005224" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2967607" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -757,13 +773,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/lib/python3.5/dist-packages/scrapy/core/downloader/handlers/ftp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-595">
-          <caret line="47" column="13" lean-forward="false" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spider/util/verify.py" />
     <entry file="file://$PROJECT_DIR$/spider/cloud_spider/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -872,7 +881,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -894,9 +902,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="4" column="68" lean-forward="false" selection-start-line="4" selection-start-column="68" selection-end-line="4" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -904,9 +909,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -928,7 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -941,7 +942,7 @@
     </entry>
     <entry file="file:///usr/local/lib/python3.5/dist-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="16422">
           <caret line="992" column="40" lean-forward="false" selection-start-line="992" selection-start-column="35" selection-end-line="992" selection-end-column="40" />
           <folding />
         </state>
@@ -968,7 +969,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1020,29 +1020,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spider/database/collections.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spider/cloud_spider/spiders/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spider/database/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="56" column="17" lean-forward="false" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1054,19 +1036,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spider/cloud_api/verify.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="49" column="30" lean-forward="false" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/app/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="221">
           <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
@@ -1074,20 +1046,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/spider/cloud_api/verify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="54" column="30" lean-forward="false" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spider/cloud_api/api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
           <folding>
-            <marker date="1501033688815" expanded="true" signature="215:325" ph="..." />
+            <marker date="1501156691772" expanded="true" signature="215:325" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/cloud_spider/spiders/playlist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="22" column="86" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="22" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spider/cloud_spider/spiders/song.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="121" column="32" lean-forward="true" selection-start-line="76" selection-start-column="4" selection-end-line="121" selection-end-column="32" />
+        <state relative-caret-position="870">
+          <caret line="121" column="32" lean-forward="false" selection-start-line="76" selection-start-column="4" selection-end-line="121" selection-end-column="32" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -1096,20 +1088,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spider/cloud_spider/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="59" column="39" lean-forward="true" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+        <state relative-caret-position="394">
+          <caret line="63" column="18" lean-forward="false" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
           <folding>
             <element signature="e#192#275#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spider/cloud_spider/spiders/playlist.py">
+    <entry file="file://$PROJECT_DIR$/spider/database/collections.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="112" column="34" lean-forward="false" selection-start-line="67" selection-start-column="6" selection-end-line="112" selection-end-column="34" />
+        <state relative-caret-position="357">
+          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/database/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="62" column="20" lean-forward="false" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
           <folding>
-            <element signature="e#0#57#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/cloud_spider/spiders/play_list_chinese.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="41" lean-forward="false" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>

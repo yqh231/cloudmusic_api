@@ -53,12 +53,18 @@ def insert_comments(data):
     conn = get_comments()
     conn.insert_one(data)
 
+
 def insert_playlist(data):
     conn = get_playlist()
     conn.insert_one(data)
 
 
-def search_song_list_by_filter(filters, offset, limit, cols = None):
+def insert_chinese_playlist(data):
+    conn = get_chinese_playlist()
+    conn.insert_one(data)
+
+
+def search_song_list_by_filter(filters, offset, limit, cols=None):
     conn = get_new_songs()
     if cols:
         return conn.find(filters, cols).skip(offset).limit(limit)

@@ -17,3 +17,8 @@ def get_comments():
 def get_playlist():
     conn = get_conn()
     return conn['play_list_japanese']
+
+
+def get_chinese_playlist():
+    conn = get_conn()
+    return conn['play_list_chinese']
