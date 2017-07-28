@@ -4,7 +4,7 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
-from spider.database import insert_song_list_data, insert_comments, insert_playlist
+from spider.database import insert_song_list_data, insert_comments, insert_playlist, insert_chinese_playlist
 from spider.cloud_spider.items import CommentItem, SongListItem, PlayListItem
 from spider.util.error import error
 
@@ -61,7 +61,7 @@ class CloudSpiderPipeline(object):
             'update_time': item['update_time'][0],
             'create_time': item['create_time'][0]
         }
-        insert_playlist(data)
+        insert_chinese_playlist(data)
 
 
 
