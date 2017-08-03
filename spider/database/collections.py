@@ -14,7 +14,7 @@ def get_comments():
     conn = get_conn()
     return conn['comments']
 
-def get_playlist():
+def get_janpanese_playlist():
     conn = get_conn()
     return conn['play_list_japanese']
 
