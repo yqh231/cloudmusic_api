@@ -1,4 +1,6 @@
 from datetime import datetime
+
+from pymongo.operations import InsertOne
 from spider.database.collections import *
 
 
@@ -63,6 +65,11 @@ def insert_chinese_playlist(data):
     conn = get_chinese_playlist()
     conn.insert_one(data)
 
+def insert_single_comments(hot_comments, nor_comments):
+    conn = get_single_comments()
+    requests = [InsertOne(item) for item in hot_comments+nor_comments]
+    if requests:
+        conn.bulk_write(requests)
 
 def search_song_list_by_filter(filters, offset, limit, cols=None):
     conn = get_new_songs()

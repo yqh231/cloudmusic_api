@@ -1,4 +1,4 @@
-from spider.database.init_db import MongoConn, get_conn
+from spider.database.init_db import get_conn
 
 
 def get_new_songs():
@@ -22,3 +22,9 @@ def get_janpanese_playlist():
 def get_chinese_playlist():
     conn = get_conn()
     return conn['play_list_chinese']
+
+def get_single_comments():
+    conn = get_conn()
+    return conn['single_comments']
+
+
